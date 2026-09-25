@@ -1,0 +1,5 @@
+restored_fixture=└ restored-stale-orphan · p:AbCdEfGhIjKlMnOpQrStUv focus=w1:w1:t1 firstmates=0
+cleanup_output=
+SCENARIO stale-orphan-retired-before-reconcile PASS
+post_cleanup_labels=["captain-anchor"] focus=w1:w1:t1 firstmates=0 journal=retired
+SCENARIO teardown-tripwire PASS

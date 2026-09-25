@@ -1,0 +1,34 @@
+spawn[development-to-staging]=fm-gate-refuse: gate agent lifecycle permitted only against lab home /Users/zachuri/.no-mistakes/worktrees/3c425873619e/01M3BPQCARCW6B3QQ5T1N7CY9B/.live-herdr-order-validation/home
+spawned development-to-staging harness=sh kind=ship mode=no-mistakes yolo=off window=fm-lab-herdr-order-live-24215-23525:w5:p2 worktree=/Users/zachuri/.treehouse/find-my-matcha-87c0ad/6/find-my-matcha
+spawn[aiddrop-task]=fm-gate-refuse: gate agent lifecycle permitted only against lab home /Users/zachuri/.no-mistakes/worktrees/3c425873619e/01M3BPQCARCW6B3QQ5T1N7CY9B/.live-herdr-order-validation/home
+●━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+●  WATCHER DOWN - SUPERVISION IS OFF
+●  1 task(s) in flight, but no watcher has a fresh beacon (last beat: never, grace 300s).
+●  Trust the emitted supervision protocol for this harness; do not use shell & for watcher repair.
+●  This is a supervision warning only; the guarded operation WILL still run.
+●  repair a missing or failed watcher cycle with the Pi tool fm_watch_arm_pi, or restart Pi with -e /Users/zachuri/.no-mistakes/worktrees/3c425873619e/01M3BPQCARCW6B3QQ5T1N7CY9B/.pi/extensions/fm-primary-turnend-guard.ts -e /Users/zachuri/.no-mistakes/worktrees/3c425873619e/01M3BPQCARCW6B3QQ5T1N7CY9B/.pi/extensions/fm-primary-pi-watch.ts if the extensions are not loaded.
+●━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+spawned aiddrop-task harness=sh kind=ship mode=no-mistakes yolo=off window=fm-lab-herdr-order-live-24215-23525:w6:p2 worktree=/Users/zachuri/.treehouse/find-my-matcha-87c0ad/1/find-my-matcha
+spawn[public-profile-header]=fm-gate-refuse: gate agent lifecycle permitted only against lab home /Users/zachuri/.no-mistakes/worktrees/3c425873619e/01M3BPQCARCW6B3QQ5T1N7CY9B/.live-herdr-order-validation/home
+WARNING: watcher still down (same stale episode; last beat: never, grace 300s) - full banner already printed this episode.
+spawned public-profile-header harness=sh kind=ship mode=no-mistakes yolo=off window=fm-lab-herdr-order-live-24215-23525:w7:p2 worktree=/Users/zachuri/.treehouse/find-my-matcha-87c0ad/4/find-my-matcha
+SCENARIO fresh-project-clusters PASS
+fresh_order=["firstmate","Find My Matcha","└ development-to-staging · p:Vp3KYtbvTtsi84vvAkBqbQ","└ public-profile-header · p:ZfwoFvgKdRjMVRR15IR4Gg","AidDrop","└ aiddrop-task · p:hIfxQxgWajetVHABfT8xPA","captain-anchor"]
+fresh_focus=w4
+scrambled_order=["AidDrop","firstmate","Find My Matcha","└ aiddrop-task · p:hIfxQxgWajetVHABfT8xPA","└ development-to-staging · p:Vp3KYtbvTtsi84vvAkBqbQ","└ public-profile-header · p:ZfwoFvgKdRjMVRR15IR4Gg","captain-anchor"]
+startup_reconcile_output=
+SCENARIO existing-cluster-migration PASS
+migrated_order=["firstmate","Find My Matcha","└ development-to-staging · p:Vp3KYtbvTtsi84vvAkBqbQ","└ public-profile-header · p:ZfwoFvgKdRjMVRR15IR4Gg","AidDrop","└ aiddrop-task · p:hIfxQxgWajetVHABfT8xPA","captain-anchor"]
+ambiguous_reconcile_output=warning: herdr presentation ordering found ambiguous Firstmate workspaces; skipping Firstmate rotation and orphan rebinding
+SCENARIO ambiguous-firstmate-refusal PASS
+ambiguous_parent_preserved=w2
+unique_orphan_reconcile_output=
+SCENARIO orphan-under-existing-firstmate PASS
+orphan_existing_order=["firstmate","└ aiddrop-task · p:hIfxQxgWajetVHABfT8xPA","Find My Matcha","└ development-to-staging · p:Vp3KYtbvTtsi84vvAkBqbQ","└ public-profile-header · p:ZfwoFvgKdRjMVRR15IR4Gg","captain-anchor"]
+missing_firstmate_reconcile_output=
+SCENARIO missing-firstmate-created-for-orphan PASS
+created_firstmate=w9
+final_order=["firstmate","└ aiddrop-task · p:hIfxQxgWajetVHABfT8xPA","Find My Matcha","└ development-to-staging · p:Vp3KYtbvTtsi84vvAkBqbQ","└ public-profile-header · p:ZfwoFvgKdRjMVRR15IR4Gg","captain-anchor"]
+final_focus=w4
+lab_session=fm-lab-herdr-order-live-24215-23525 herdr=0.9.0 protocol=22
+SCENARIO teardown-tripwire PASS

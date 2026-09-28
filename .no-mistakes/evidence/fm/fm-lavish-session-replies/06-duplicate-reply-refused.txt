@@ -1,0 +1,3 @@
+$ duplicate re-arm with the already-accepted round-2 reply
+error: cannot re-arm firstmate-owned Lavish source lavish-e0872ebcbfa085f5: no captured round is waiting to be acknowledged
+exit-status: 1

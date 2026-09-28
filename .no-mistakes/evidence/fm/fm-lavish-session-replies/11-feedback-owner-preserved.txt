@@ -1,0 +1,21 @@
+$ original home reads captured feedback
+CAPTAIN MESSAGE
+| hi
+END CAPTAIN MESSAGE
+
+declared_items: 1
+presented_items: 1
+malformed_items: 0
+complete: yes
+lifecycle: feedback
+session_ended: (unset)
+annotation_count: 0
+session_ending_message_count: 1
+
+ANNOTATIONS: (none)
+END LAVISH RESULT (1 of 1)
+
+$ competing home reconcile after original capture
+reconciled: published=0 started=0 stopped=0 uncertain=0 failed=1
+exit-status: 1
+competing-home-captured-feedback: no

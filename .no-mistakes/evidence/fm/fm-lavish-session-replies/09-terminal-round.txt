@@ -1,0 +1,26 @@
+$ bin/fm-procevent-lavish.sh read <captured-terminal-round-3>
+SESSION-ENDING MESSAGE
+| Final terminal message. Token: CAPTAIN-END-3
+END SESSION-ENDING MESSAGE
+
+declared_items: 1
+presented_items: 1
+malformed_items: 0
+complete: yes
+lifecycle: feedback
+session_ended: true
+annotation_count: 0
+session_ending_message_count: 1
+
+ANNOTATIONS: (none)
+END LAVISH RESULT (1 of 1)
+
+$ bin/fm-procevent-lavish.sh classify <captured-terminal-round-3>
+feedback
+
+$ bin/fm-procevent.sh list
+no sources registered
+registration-retired: yes
+
+$ bin/fm-procevent.sh handled <source> 3
+handled: lavish-e0872ebcbfa085f5 3

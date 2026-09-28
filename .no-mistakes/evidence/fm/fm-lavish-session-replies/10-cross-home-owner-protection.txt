@@ -1,0 +1,21 @@
+$ original home arm
+registration-identity: 16777231:540992031
+registered: lavish-c27f8e8e37b369d9 (lavish)
+armed: lavish-c27f8e8e37b369d9
+artifact: /Users/zachuri/.no-mistakes/worktrees/3c425873619e/01M3EGM5ZEQFD4J0JMX50CPZZ1/.live-lavish-test/ownership.html
+
+$ competing home arm
+registration-identity: 16777231:540992079
+registered: lavish-c27f8e8e37b369d9 (lavish)
+still-listening: lavish-c27f8e8e37b369d9
+artifact: /Users/zachuri/.no-mistakes/worktrees/3c425873619e/01M3EGM5ZEQFD4J0JMX50CPZZ1/.live-lavish-test/ownership.html
+note: an earlier listener is still live and serving this board; this registration takes effect only after the source is retired and armed again
+exit-status: 0
+
+$ original home list
+SOURCE                       ADAPTER      OWNER      PENDING
+lavish-c27f8e8e37b369d9      lavish       live       0
+$ competing home list
+SOURCE                       ADAPTER      OWNER      PENDING
+lavish-c27f8e8e37b369d9      lavish       live       0
+original-global-claim-unchanged: yes

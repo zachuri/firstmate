@@ -1,0 +1,21 @@
+$ original home re-arms without a reply, then reads the next queued capture
+registration-identity: 16777231:540993342
+registered: lavish-c27f8e8e37b369d9 (lavish)
+armed: lavish-c27f8e8e37b369d9
+artifact: /Users/zachuri/.no-mistakes/worktrees/3c425873619e/01M3EGM5ZEQFD4J0JMX50CPZZ1/.live-lavish-test/ownership.html
+
+CAPTAIN MESSAGE
+| Ownership probe. Token: ORIGINAL-HOME-ONLY
+END CAPTAIN MESSAGE
+
+declared_items: 1
+presented_items: 1
+malformed_items: 0
+complete: yes
+lifecycle: feedback
+session_ended: (unset)
+annotation_count: 0
+session_ending_message_count: 1
+
+ANNOTATIONS: (none)
+END LAVISH RESULT (1 of 1)

@@ -1,0 +1,23 @@
+$ bin/fm-procevent.sh list
+SOURCE                       ADAPTER      OWNER      PENDING
+lavish-e0872ebcbfa085f5      lavish       none       1
+
+$ bin/fm-procevent-lavish.sh read <captured-round-1>
+CAPTAIN MESSAGE
+| Please confirm this reply stays in this exact Lavish session. Token: CAPTAIN-ROUND-1
+END CAPTAIN MESSAGE
+
+declared_items: 1
+presented_items: 1
+malformed_items: 0
+complete: yes
+lifecycle: feedback
+session_ended: (unset)
+annotation_count: 0
+session_ending_message_count: 1
+
+ANNOTATIONS: (none)
+END LAVISH RESULT (1 of 1)
+
+persisted-result: /Users/zachuri/.no-mistakes/worktrees/3c425873619e/01M3EGM5ZEQFD4J0JMX50CPZZ1/.live-lavish-test/fm-home/state/procevent-inbox/lavish-e0872ebcbfa085f5.1.result
+mode=600 bytes=2831

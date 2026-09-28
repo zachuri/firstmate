@@ -1,0 +1,26 @@
+$ final-code captured feedback
+CAPTAIN MESSAGE
+| Final-code feedback token: FINAL-CAPTAIN
+END CAPTAIN MESSAGE
+
+declared_items: 1
+presented_items: 1
+malformed_items: 0
+complete: yes
+lifecycle: feedback
+session_ended: (unset)
+annotation_count: 0
+session_ending_message_count: 1
+
+ANNOTATIONS: (none)
+END LAVISH RESULT (1 of 1)
+
+$ final-code reply-carrying re-arm
+registration-identity: 16777231:541133062
+registered: lavish-a69fb644cd294506 (lavish)
+armed: lavish-a69fb644cd294506
+artifact: /Users/zachuri/.no-mistakes/worktrees/3c425873619e/01M3EGM5ZEQFD4J0JMX50CPZZ1/.live-lavish-test/final.html
+
+$ final-code source state
+SOURCE                       ADAPTER      OWNER      PENDING
+lavish-a69fb644cd294506      lavish       live       0

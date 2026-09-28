@@ -1,0 +1,26 @@
+$ bin/fm-procevent-lavish.sh read <captured-round-2>
+CAPTAIN MESSAGE
+| Follow-up in the still-open session. Token: CAPTAIN-ROUND-2
+END CAPTAIN MESSAGE
+
+declared_items: 1
+presented_items: 1
+malformed_items: 0
+complete: yes
+lifecycle: feedback
+session_ended: (unset)
+annotation_count: 0
+session_ending_message_count: 1
+
+ANNOTATIONS: (none)
+END LAVISH RESULT (1 of 1)
+
+$ bin/fm-procevent-lavish.sh arm review.html --agent-reply-file reply2.txt
+registration-identity: 16777231:540990437
+registered: lavish-e0872ebcbfa085f5 (lavish)
+armed: lavish-e0872ebcbfa085f5
+artifact: /Users/zachuri/.no-mistakes/worktrees/3c425873619e/01M3EGM5ZEQFD4J0JMX50CPZZ1/.live-lavish-test/review.html
+
+$ bin/fm-procevent.sh list
+SOURCE                       ADAPTER      OWNER      PENDING
+lavish-e0872ebcbfa085f5      lavish       live       0

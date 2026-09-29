@@ -1,0 +1,6 @@
+$ bin/fm-procevent-lavish.sh arm unsolicited.html --agent-reply-file reply.txt
+error: cannot post a Firstmate reply unless exactly one captured round is waiting
+exit=1
+$ bin/fm-procevent.sh list (guard source absent)
+SOURCE                       ADAPTER      OWNER      PENDING
+lavish-9670d704dcd950ce      lavish       live       0

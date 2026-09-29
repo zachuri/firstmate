@@ -1,0 +1,8 @@
+$ bin/fm-procevent-lavish.sh arm legacy-multi.html --agent-reply-file multi-reply.txt
+error: cannot post a Firstmate reply unless exactly one captured round is waiting
+exit=1
+$ bin/fm-procevent.sh list
+SOURCE                       ADAPTER      OWNER      PENDING
+lavish-668e44679ebd8db2      lavish       none       2
+round_1=unhandled
+round_2=unhandled

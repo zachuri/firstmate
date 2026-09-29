@@ -1,0 +1,14 @@
+Before migration:
+SOURCE                       ADAPTER      OWNER      PENDING
+lavish-37cb31a1db1ab34c      lavish       live       1
+legacy_listener_pid=18495
+
+$ bin/fm-procevent-lavish.sh arm legacy.html --agent-reply-file legacy-reply.txt
+registered: lavish-37cb31a1db1ab34c (lavish, Firstmate)
+armed: lavish-37cb31a1db1ab34c
+artifact: /Users/zachuri/.no-mistakes/worktrees/3c425873619e/01M3NF7423KBBSBF507GXEWVDN/.test-live/artifacts/legacy.html
+replacement_listener_pid=25655
+After migration:
+SOURCE                       ADAPTER      OWNER      PENDING
+lavish-37cb31a1db1ab34c      lavish       live       0
+captured_round_1=handled

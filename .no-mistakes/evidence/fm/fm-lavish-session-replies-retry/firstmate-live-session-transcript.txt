@@ -1,0 +1,34 @@
+$ bin/fm-procevent-lavish.sh arm firstmate-reply.html
+registered: lavish-9670d704dcd950ce (lavish, Firstmate)
+armed: lavish-9670d704dcd950ce
+artifact: /Users/zachuri/.no-mistakes/worktrees/3c425873619e/01M3NF7423KBBSBF507GXEWVDN/.test-live/artifacts/firstmate-reply.html
+
+# Browser submitted: Please confirm this reply stays in this Lavish conversation.
+$ bin/fm-procevent-lavish.sh read <captured-result>
+CAPTAIN MESSAGE
+| Please confirm this reply stays in this Lavish conversation.
+END CAPTAIN MESSAGE
+
+declared_items: 1
+presented_items: 1
+malformed_items: 0
+complete: yes
+lifecycle: feedback
+session_ended: (unset)
+annotation_count: 0
+session_ending_message_count: 1
+
+ANNOTATIONS: (none)
+END LAVISH RESULT (1 of 1)
+$ bin/fm-procevent.sh list  # round is open and listener paused
+SOURCE                       ADAPTER      OWNER      PENDING
+lavish-9670d704dcd950ce      lavish       none       1
+
+$ bin/fm-procevent-lavish.sh arm firstmate-reply.html --agent-reply-file reply.txt
+registered: lavish-9670d704dcd950ce (lavish, Firstmate)
+armed: lavish-9670d704dcd950ce
+artifact: /Users/zachuri/.no-mistakes/worktrees/3c425873619e/01M3NF7423KBBSBF507GXEWVDN/.test-live/artifacts/firstmate-reply.html
+$ bin/fm-procevent.sh list  # next listener active, prior round acknowledged
+SOURCE                       ADAPTER      OWNER      PENDING
+lavish-9670d704dcd950ce      lavish       live       0
+# Browser displayed: Confirmed: this response came back through the active Firstmate-owned Lavish session.

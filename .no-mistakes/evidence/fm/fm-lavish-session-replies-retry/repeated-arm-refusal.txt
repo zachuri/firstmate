@@ -1,0 +1,6 @@
+$ bin/fm-procevent-lavish.sh arm <artifact> --agent-reply-file <reply>  # repeated with no pending round
+error: cannot re-arm source lavish-9670d704dcd950ce: Firstmate already holds this board and no captured round is waiting to be acknowledged
+exit=1
+$ bin/fm-procevent.sh list
+SOURCE                       ADAPTER      OWNER      PENDING
+lavish-9670d704dcd950ce      lavish       live       0

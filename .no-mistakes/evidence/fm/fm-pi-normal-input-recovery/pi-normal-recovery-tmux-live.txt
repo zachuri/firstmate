@@ -1,0 +1,7 @@
+LIVE PRODUCT: tmux tmux 3.6a, Pi 0.87.1, private fm-lab socket
+Before: mode=NORMAL; composer-state=empty
+fm-send rc=0
+After: doorbell rendered in transcript; no unsupported editor command
+pane:  : Firstmate instruction waiting: list '/var/folders/p8/fk5lqlq53nsg332c3tpwf13h0000gn/T/fm-lab.adLdCt/state/normal-tmux.inbox'/*.msg and, in numeric order, read and act on each,
+pane: ──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────── INSERT
+RESULT: PASS — real tmux Pi recovered blank NORMAL input and submitted the Firstmate doorbell.

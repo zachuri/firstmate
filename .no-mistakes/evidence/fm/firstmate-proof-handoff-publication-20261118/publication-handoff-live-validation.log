@@ -1,0 +1,62 @@
+SCENARIO 1: scaffold explicit publication limits and one proof handoff
+scaffolded: /Users/zachuri/.no-mistakes/worktrees/3c425873619e/01M7PKZBP3D3S15RFMBDBVK5M2/.live-validation/home/data/live-proof/brief.md (ship, mode=no-mistakes; replace {TASK} and {FIRSTMATE_SPEC})
+proof_handoff_sections=1
+Before the implementation handoff and again before the ready report, maintain ONE `# Proof handoff` section outside `# Task` in `/Users/zachuri/.no-mistakes/worktrees/3c425873619e/01M7PKZBP3D3S15RFMBDBVK5M2/.live-validation/home/data/live-proof/brief.md`; status lines point there instead of copying it, including after scout promotion.
+Keep it concise: Accepted baseline; Actual delta; one table mapping Acceptance criterion -> User path/setup and observable result -> Relevant source/build/runtime -> Current proof or missing acceptance.
+Delivery contract: mode=no-mistakes evidence-text=unrestricted evidence-media=unrestricted evidence-audience=unrestricted
+Use `FM_HOME=/Users/zachuri/.no-mistakes/worktrees/3c425873619e/01M7PKZBP3D3S15RFMBDBVK5M2/.live-validation/home FM_STATE_OVERRIDE=/Users/zachuri/.no-mistakes/worktrees/3c425873619e/01M7PKZBP3D3S15RFMBDBVK5M2/.live-validation/home/state FM_TASK_ID=live-proof /Users/zachuri/.no-mistakes/worktrees/3c425873619e/01M7PKZBP3D3S15RFMBDBVK5M2/bin/fm-role.sh evidence && no-mistakes axi run ...`; this supervised preflight pins the dispatching home, state directory and task before reading the current project/worktree and limits from metadata. Never run the publishing command after a refusal.
+RESULT: PASS
+
+SCENARIO 2: supervisor-pinned unrestricted record passes the real preflight
+evidence: task live-proof project /Users/zachuri/.no-mistakes/worktrees/3c425873619e/01M7PKZBP3D3S15RFMBDBVK5M2/.live-validation/project worktree /Users/zachuri/.no-mistakes/worktrees/3c425873619e/01M7PKZBP3D3S15RFMBDBVK5M2/.live-validation/worktree-a permits text=unrestricted media=unrestricted audience=unrestricted (no-mistakes version v1.72.0 (9fcc865) 2026-09-08T13:12:57Z); destination authority and actual payload approval remain separate
+RESULT: PASS
+
+SCENARIO 3: ambient scratch policy cannot override a restricted supervisor record
+exit=1
+refused: no verified control for text/raw-log limit restricted (no-mistakes version v1.72.0 (9fcc865) 2026-09-08T13:12:57Z); drafting instructions and media/storage switches do not suppress deterministic text embedding
+publisher_side_effect=absent
+RESULT: PASS
+
+SCENARIO 4: cross-task worktree mismatch refuses before publication
+exit=1
+refused: FM_TASK_ID=other-task is bound to worktree /Users/zachuri/.no-mistakes/worktrees/3c425873619e/01M7PKZBP3D3S15RFMBDBVK5M2/.live-validation/worktree-b, not current worktree /Users/zachuri/.no-mistakes/worktrees/3c425873619e/01M7PKZBP3D3S15RFMBDBVK5M2/.live-validation/worktree-a
+publisher_side_effect=absent
+RESULT: PASS
+
+SCENARIO 5: legacy no-mistakes brief without evidence declarations is refused before launch
+exit=1
+fm-gate-refuse: gate agent lifecycle permitted only against lab home /Users/zachuri/.no-mistakes/worktrees/3c425873619e/01M7PKZBP3D3S15RFMBDBVK5M2/.live-validation/home
+●━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+●  WATCHER DOWN - SUPERVISION IS OFF
+●  2 task(s) in flight, but no watcher has a fresh beacon (last beat: never, grace 300s).
+●  Trust the emitted supervision protocol for this harness; do not use shell & for watcher repair.
+●  This is a supervision warning only; the guarded operation WILL still run.
+●  repair a missing or failed watcher cycle with the Pi tool fm_watch_arm_pi, or restart Pi with -e /Users/zachuri/.no-mistakes/worktrees/3c425873619e/01M7PKZBP3D3S15RFMBDBVK5M2/.pi/extensions/fm-primary-turnend-guard.ts -e /Users/zachuri/.no-mistakes/worktrees/3c425873619e/01M7PKZBP3D3S15RFMBDBVK5M2/.pi/extensions/fm-primary-pi-watch.ts if the extensions are not loaded.
+●━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+warning: /Users/zachuri/.no-mistakes/worktrees/3c425873619e/01M7PKZBP3D3S15RFMBDBVK5M2/.live-validation/home/data/legacy-live/launch-brief.md records no ship branch; defaulting to legacy branch fm/legacy-live
+warning: /Users/zachuri/.no-mistakes/worktrees/3c425873619e/01M7PKZBP3D3S15RFMBDBVK5M2/.live-validation/home/data/legacy-live/launch-brief.md records no delivery contract line (scaffolded before ship briefs recorded one); launching on the explicit --mode no-mistakes - confirm its definition of done matches
+error: evidence-limit mismatch for legacy-live: /Users/zachuri/.no-mistakes/worktrees/3c425873619e/01M7PKZBP3D3S15RFMBDBVK5M2/.live-validation/home/data/legacy-live/brief.md records text=missing media=missing audience=missing, but this spawn passed text=unknown media=unknown audience=unknown; correct the flags or re-scaffold the brief
+task_metadata_side_effect=absent
+RESULT: PASS
+
+SCENARIO 6: scout promotion carries the same proof handoff and pinned evidence limits
+●━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+●  WATCHER DOWN - SUPERVISION IS OFF
+●  1 task(s) in flight, but no watcher has a fresh beacon (last beat: never, grace 300s).
+●  Trust the emitted supervision protocol for this harness; do not use shell & for watcher repair.
+●  This is a supervision warning only; the guarded operation WILL still run.
+●  repair a missing or failed watcher cycle with the Pi tool fm_watch_arm_pi, or restart Pi with -e /Users/zachuri/.no-mistakes/worktrees/3c425873619e/01M7PKZBP3D3S15RFMBDBVK5M2/.pi/extensions/fm-primary-turnend-guard.ts -e /Users/zachuri/.no-mistakes/worktrees/3c425873619e/01M7PKZBP3D3S15RFMBDBVK5M2/.pi/extensions/fm-primary-pi-watch.ts if the extensions are not loaded.
+●━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+promoted promote-live to ship mode=no-mistakes yolo=off (teardown protection restored)
+wrote ship instructions for mode=no-mistakes: /Users/zachuri/.no-mistakes/worktrees/3c425873619e/01M7PKZBP3D3S15RFMBDBVK5M2/.live-validation/home/data/promote-live/ship-instructions.md
+next: FM_HOME=/Users/zachuri/.no-mistakes/worktrees/3c425873619e/01M7PKZBP3D3S15RFMBDBVK5M2/.live-validation/home bin/fm-send.sh fm-promote-live "$(cat /Users/zachuri/.no-mistakes/worktrees/3c425873619e/01M7PKZBP3D3S15RFMBDBVK5M2/.live-validation/home/data/promote-live/ship-instructions.md)"
+proof_handoff_sections=1
+This task is now kind=ship with mode=no-mistakes evidence-text=unrestricted evidence-media=unrestricted evidence-audience=unrestricted.
+Before the implementation handoff and again before the ready report, maintain ONE `# Proof handoff` section outside `# Task` in `/Users/zachuri/.no-mistakes/worktrees/3c425873619e/01M7PKZBP3D3S15RFMBDBVK5M2/.live-validation/home/data/promote-live/brief.md`; status lines point there instead of copying it, including after scout promotion.
+Use `FM_HOME=/Users/zachuri/.no-mistakes/worktrees/3c425873619e/01M7PKZBP3D3S15RFMBDBVK5M2/.live-validation/home FM_STATE_OVERRIDE=/Users/zachuri/.no-mistakes/worktrees/3c425873619e/01M7PKZBP3D3S15RFMBDBVK5M2/.live-validation/home/state FM_TASK_ID=promote-live /Users/zachuri/.no-mistakes/worktrees/3c425873619e/01M7PKZBP3D3S15RFMBDBVK5M2/bin/fm-role.sh evidence && no-mistakes axi run ...`; this supervised preflight pins the dispatching home, state directory and task before reading the current project/worktree and limits from metadata. Never run the publishing command after a refusal.
+kind=ship
+mode=no-mistakes
+evidence_text=unrestricted
+evidence_media=unrestricted
+evidence_audience=unrestricted
+RESULT: PASS

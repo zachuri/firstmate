@@ -1,0 +1,626 @@
+SYNTHETIC ACTUAL-CLI EVIDENCE — NOT NATIVE/LIVE BACKEND COVERAGE
+Command: tests/fm-teardown-endpoint-safety.test.sh --gnhf-only (sourced under bash with xtrace and EXIT evidence capture).
+Endpoint/process/pool dependencies are test-local stubs. No real fleet cleanup.
+Exit statuses below come from executable test runtime assertions over the actual CLI return code.
+Raw CLI output and persisted file bytes/hashes are in gnhf-cli-state.json; raw execution trace is in gnhf-targeted-trace.log.
+
+=== gnhf-absent ===
+$ bash bin/fm-teardown.sh history-scout 
+CLI exit: 0
+stdout:
+teardown history-scout complete (window isolated:fm-history-scout, worktree /Users/zachuri/.no-mistakes/worktrees/1cf57c113ec8/01M838YCJCAH84RWJBYBK0QCV2/.nm-test-tmp/fm-teardown-endpoint-safety.2K38CX/gnhf-absent/worktree)
+Backlog: history-scout just finished (config/backlog-backend selects manual editing). Update /Users/zachuri/.no-mistakes/worktrees/1cf57c113ec8/01M838YCJCAH84RWJBYBK0QCV2/.nm-test-tmp/fm-teardown-endpoint-safety.2K38CX/gnhf-absent/home/data/backlog.md - move history-scout to Done, keep Done to the 10 most recent, then re-scan Queued and dispatch only work whose blockers are gone and date is due.
+stderr:
+(empty)
+runtime.log:
+treehouse return --force /Users/zachuri/.no-mistakes/worktrees/1cf57c113ec8/01M838YCJCAH84RWJBYBK0QCV2/.nm-test-tmp/fm-teardown-endpoint-safety.2K38CX/gnhf-absent/worktree
+tmux <kill-window> <-t> <=isolated:=fm-history-scout>
+before/after home/state/history-scout.meta: removed
+before/after pool/treehouse-state.json: identical bytes
+before/after pool/1/.fm-slot-owner: removed
+before/after pool/1/repo/README.md: identical bytes
+history pool/1/repo/.gnhf: {'exists': False}
+history secondmate-home/.gnhf: {'exists': False}
+
+=== gnhf-child-clean ===
+$ bash bin/fm-teardown.sh history-scout --force
+CLI exit: 0
+stdout:
+teardown history-scout complete (window isolated:fm-history-scout, worktree /Users/zachuri/.no-mistakes/worktrees/1cf57c113ec8/01M838YCJCAH84RWJBYBK0QCV2/.nm-test-tmp/fm-teardown-endpoint-safety.2K38CX/gnhf-child-clean/secondmate-home)
+stderr:
+(empty)
+runtime.log:
+tmux <kill-window> <-t> <=isolated:=fm-child>
+synthetic child shutdown scan
+treehouse return --force /Users/zachuri/.no-mistakes/worktrees/1cf57c113ec8/01M838YCJCAH84RWJBYBK0QCV2/.nm-test-tmp/fm-teardown-endpoint-safety.2K38CX/gnhf-child-clean/worktree
+tmux <kill-window> <-t> <=isolated:=fm-history-scout>
+synthetic child shutdown scan
+before/after home/state/history-scout.meta: removed
+before/after pool/treehouse-state.json: identical bytes
+before/after pool/1/.fm-slot-owner: removed
+before/after secondmate-home/state/child.meta: removed
+before/after secondmate-home/state/child.status: removed
+before/after pool/1/repo/README.md: identical bytes
+history pool/1/repo/.gnhf: {'exists': False}
+history secondmate-home/.gnhf: {'exists': False}
+
+=== gnhf-child-direct-fallback ===
+$ bash bin/fm-teardown.sh history-scout --force
+CLI exit: 1
+stdout:
+(empty)
+stderr:
+REFUSED: protected GNHF history (.gnhf) exists under /Users/zachuri/.no-mistakes/worktrees/1cf57c113ec8/01M838YCJCAH84RWJBYBK0QCV2/.nm-test-tmp/fm-teardown-endpoint-safety.2K38CX/gnhf-child-direct-fallback/pool/1/repo; preserve it outside the cleanup target before retrying. --force does not bypass this check.
+runtime.log:
+tmux <kill-window> <-t> <=isolated:=fm-child>
+synthetic child shutdown scan
+synthetic late child write
+before/after home/state/history-scout.meta: identical bytes
+before/after pool/treehouse-state.json: identical bytes
+before/after pool/1/.fm-slot-owner: identical bytes
+before/after secondmate-home/state/child.meta: identical bytes
+before/after secondmate-home/state/child.status: identical bytes
+before/after pool/1/repo/README.md: identical bytes
+history pool/1/repo/.gnhf: {'exists': True, 'mode': 'drwxr-xr-x'}
+history secondmate-home/.gnhf: {'exists': False}
+history pool/1/repo/.gnhf/runs: {'exists': True, 'mode': 'drwxr-xr-x'}
+history pool/1/repo/.gnhf/runs/synthetic: {'exists': True, 'mode': 'drwxr-xr-x'}
+history pool/1/repo/.gnhf/runs/synthetic/marker: {'exists': True, 'mode': '-rw-r--r--', 'sha256': 'eb0a56fd7dc423f71c3a8aaeab8a30eb55cf0fcddce27fe19e216af74cafbd6f', 'bytes': 31, 'text': 'public synthetic child history\n'}
+
+=== gnhf-child-orca-shutdown ===
+$ bash bin/fm-teardown.sh history-scout --force
+CLI exit: 1
+stdout:
+(empty)
+stderr:
+REFUSED: protected GNHF history (.gnhf) exists under /Users/zachuri/.no-mistakes/worktrees/1cf57c113ec8/01M838YCJCAH84RWJBYBK0QCV2/.nm-test-tmp/fm-teardown-endpoint-safety.2K38CX/gnhf-child-orca-shutdown/pool/1/repo; preserve it outside the cleanup target before retrying. --force does not bypass this check.
+runtime.log:
+orca worktree show --worktree id:synthetic-child::/Users/zachuri/.no-mistakes/worktrees/1cf57c113ec8/01M838YCJCAH84RWJBYBK0QCV2/.nm-test-tmp/fm-teardown-endpoint-safety.2K38CX/gnhf-child-orca-shutdown/worktree --json
+orca worktree show --worktree id:synthetic-child::/Users/zachuri/.no-mistakes/worktrees/1cf57c113ec8/01M838YCJCAH84RWJBYBK0QCV2/.nm-test-tmp/fm-teardown-endpoint-safety.2K38CX/gnhf-child-orca-shutdown/worktree --json
+orca terminal close --terminal synthetic-child --json
+synthetic child shutdown scan
+before/after home/state/history-scout.meta: identical bytes
+before/after pool/treehouse-state.json: identical bytes
+before/after pool/1/.fm-slot-owner: identical bytes
+before/after secondmate-home/state/child.meta: identical bytes
+before/after secondmate-home/state/child.status: identical bytes
+before/after pool/1/repo/README.md: identical bytes
+history pool/1/repo/.gnhf: {'exists': True, 'mode': 'drwxr-xr-x'}
+history secondmate-home/.gnhf: {'exists': False}
+history pool/1/repo/.gnhf/runs: {'exists': True, 'mode': 'drwxr-xr-x'}
+history pool/1/repo/.gnhf/runs/synthetic: {'exists': True, 'mode': 'drwxr-xr-x'}
+history pool/1/repo/.gnhf/runs/synthetic/marker: {'exists': True, 'mode': '-rw-r--r--', 'sha256': 'eb0a56fd7dc423f71c3a8aaeab8a30eb55cf0fcddce27fe19e216af74cafbd6f', 'bytes': 31, 'text': 'public synthetic child history\n'}
+
+=== gnhf-child-return-failure ===
+$ bash bin/fm-teardown.sh history-scout --force
+CLI exit: 1
+stdout:
+(empty)
+stderr:
+synthetic return failure
+REFUSED: protected GNHF history (.gnhf) exists under /Users/zachuri/.no-mistakes/worktrees/1cf57c113ec8/01M838YCJCAH84RWJBYBK0QCV2/.nm-test-tmp/fm-teardown-endpoint-safety.2K38CX/gnhf-child-return-failure/pool/1/repo; preserve it outside the cleanup target before retrying. --force does not bypass this check.
+runtime.log:
+tmux <kill-window> <-t> <=isolated:=fm-child>
+synthetic child shutdown scan
+treehouse return --force /Users/zachuri/.no-mistakes/worktrees/1cf57c113ec8/01M838YCJCAH84RWJBYBK0QCV2/.nm-test-tmp/fm-teardown-endpoint-safety.2K38CX/gnhf-child-return-failure/worktree
+before/after home/state/history-scout.meta: identical bytes
+before/after pool/treehouse-state.json: identical bytes
+before/after pool/1/.fm-slot-owner: identical bytes
+before/after secondmate-home/state/child.meta: identical bytes
+before/after secondmate-home/state/child.status: identical bytes
+before/after pool/1/repo/README.md: identical bytes
+history pool/1/repo/.gnhf: {'exists': True, 'mode': 'drwxr-xr-x'}
+history secondmate-home/.gnhf: {'exists': False}
+history pool/1/repo/.gnhf/runs: {'exists': True, 'mode': 'drwxr-xr-x'}
+history pool/1/repo/.gnhf/runs/synthetic: {'exists': True, 'mode': 'drwxr-xr-x'}
+history pool/1/repo/.gnhf/runs/synthetic/marker: {'exists': True, 'mode': '-rw-r--r--', 'sha256': 'eb0a56fd7dc423f71c3a8aaeab8a30eb55cf0fcddce27fe19e216af74cafbd6f', 'bytes': 31, 'text': 'public synthetic child history\n'}
+
+=== gnhf-child-scan-error ===
+$ bash bin/fm-teardown.sh history-scout --force
+CLI exit: 1
+stdout:
+(empty)
+stderr:
+REFUSED: cannot determine leaked processes under /Users/zachuri/.no-mistakes/worktrees/1cf57c113ec8/01M838YCJCAH84RWJBYBK0QCV2/.nm-test-tmp/fm-teardown-endpoint-safety.2K38CX/gnhf-child-scan-error/worktree for history-scout (lsof failed); preserving the worktree/tasktmp for manual inspection or retry.
+runtime.log:
+tmux <kill-window> <-t> <=isolated:=fm-child>
+synthetic child shutdown scan
+before/after home/state/history-scout.meta: identical bytes
+before/after pool/treehouse-state.json: identical bytes
+before/after pool/1/.fm-slot-owner: identical bytes
+before/after secondmate-home/state/child.meta: identical bytes
+before/after secondmate-home/state/child.status: identical bytes
+before/after pool/1/repo/README.md: identical bytes
+history pool/1/repo/.gnhf: {'exists': False}
+history secondmate-home/.gnhf: {'exists': False}
+
+=== gnhf-child-shutdown ===
+$ bash bin/fm-teardown.sh history-scout --force
+CLI exit: 1
+stdout:
+(empty)
+stderr:
+REFUSED: protected GNHF history (.gnhf) exists under /Users/zachuri/.no-mistakes/worktrees/1cf57c113ec8/01M838YCJCAH84RWJBYBK0QCV2/.nm-test-tmp/fm-teardown-endpoint-safety.2K38CX/gnhf-child-shutdown/worktree; preserve it outside the cleanup target before retrying. --force does not bypass this check.
+runtime.log:
+tmux <kill-window> <-t> <=isolated:=fm-child>
+synthetic child shutdown scan
+before/after home/state/history-scout.meta: identical bytes
+before/after pool/treehouse-state.json: identical bytes
+before/after pool/1/.fm-slot-owner: identical bytes
+before/after secondmate-home/state/child.meta: identical bytes
+before/after secondmate-home/state/child.status: identical bytes
+before/after pool/1/repo/README.md: identical bytes
+history pool/1/repo/.gnhf: {'exists': True, 'mode': 'drwxr-xr-x'}
+history secondmate-home/.gnhf: {'exists': False}
+history pool/1/repo/.gnhf/runs: {'exists': True, 'mode': 'drwxr-xr-x'}
+history pool/1/repo/.gnhf/runs/synthetic: {'exists': True, 'mode': 'drwxr-xr-x'}
+history pool/1/repo/.gnhf/runs/synthetic/marker: {'exists': True, 'mode': '-rw-r--r--', 'sha256': 'eb0a56fd7dc423f71c3a8aaeab8a30eb55cf0fcddce27fe19e216af74cafbd6f', 'bytes': 31, 'text': 'public synthetic child history\n'}
+
+=== gnhf-child-slot-ambiguous ===
+$ bash bin/fm-teardown.sh history-scout --force
+CLI exit: 1
+stdout:
+(empty)
+stderr:
+REFUSED: task child's recorded worktree /Users/zachuri/.no-mistakes/worktrees/1cf57c113ec8/01M838YCJCAH84RWJBYBK0QCV2/.nm-test-tmp/fm-teardown-endpoint-safety.2K38CX/gnhf-child-slot-ambiguous/worktree carries a slot-owner claim that cannot be read, so the slot cannot be proved to still be this task's; nothing was changed - not even with --force.
+Inspect or repair the claim file at /Users/zachuri/.no-mistakes/worktrees/1cf57c113ec8/01M838YCJCAH84RWJBYBK0QCV2/.nm-test-tmp/fm-teardown-endpoint-safety.2K38CX/gnhf-child-slot-ambiguous/pool/1/.fm-slot-owner (task= and home= lines), then re-run teardown.
+runtime.log:
+(empty)
+before/after home/state/history-scout.meta: identical bytes
+before/after pool/treehouse-state.json: identical bytes
+before/after pool/1/.fm-slot-owner: identical bytes
+before/after secondmate-home/state/child.meta: identical bytes
+before/after secondmate-home/state/child.status: identical bytes
+before/after pool/1/repo/README.md: identical bytes
+history pool/1/repo/.gnhf: {'exists': True, 'mode': 'drwxr-xr-x'}
+history secondmate-home/.gnhf: {'exists': False}
+history pool/1/repo/.gnhf/runs: {'exists': True, 'mode': 'drwxr-xr-x'}
+history pool/1/repo/.gnhf/runs/synthetic: {'exists': True, 'mode': 'drwxr-xr-x'}
+history pool/1/repo/.gnhf/runs/synthetic/marker: {'exists': True, 'mode': '-rw-r--r--', 'sha256': '6a17d1c7f5aa32f0edde8ce2acc692bdf7354dc4ffcc4452903c0cbe9ba66077', 'bytes': 25, 'text': 'public synthetic history\n'}
+
+=== gnhf-child-slot-collision ===
+$ bash bin/fm-teardown.sh history-scout --force
+CLI exit: 1
+stdout:
+(empty)
+stderr:
+REFUSED: task child's recorded worktree /Users/zachuri/.no-mistakes/worktrees/1cf57c113ec8/01M838YCJCAH84RWJBYBK0QCV2/.nm-test-tmp/fm-teardown-endpoint-safety.2K38CX/gnhf-child-slot-collision/pool/1/repo is also task current-owner's recorded worktree.
+Returning that pool slot would kill current-owner's processes and reset its copy, so nothing was changed - not even with --force.
+Reconcile whichever record is wrong (bin/fm-crew-state.sh child; bin/fm-crew-state.sh current-owner), then re-run teardown.
+runtime.log:
+(empty)
+before/after home/state/history-scout.meta: identical bytes
+before/after pool/treehouse-state.json: identical bytes
+before/after pool/1/.fm-slot-owner: identical bytes
+before/after secondmate-home/state/child.meta: identical bytes
+before/after secondmate-home/state/child.status: identical bytes
+before/after pool/1/repo/README.md: identical bytes
+before/after home/state/current-owner.meta: identical bytes
+history pool/1/repo/.gnhf: {'exists': False}
+history secondmate-home/.gnhf: {'exists': False}
+
+=== gnhf-child-slot-reassigned ===
+$ bash bin/fm-teardown.sh history-scout --force
+CLI exit: 0
+stdout:
+teardown history-scout complete (window isolated:fm-history-scout, worktree /Users/zachuri/.no-mistakes/worktrees/1cf57c113ec8/01M838YCJCAH84RWJBYBK0QCV2/.nm-test-tmp/fm-teardown-endpoint-safety.2K38CX/gnhf-child-slot-reassigned/secondmate-home)
+stderr:
+warning: task child's recorded worktree /Users/zachuri/.no-mistakes/worktrees/1cf57c113ec8/01M838YCJCAH84RWJBYBK0QCV2/.nm-test-tmp/fm-teardown-endpoint-safety.2K38CX/gnhf-child-slot-reassigned/worktree was reassigned to task current-owner (home /Users/zachuri/.no-mistakes/worktrees/1cf57c113ec8/01M838YCJCAH84RWJBYBK0QCV2/.nm-test-tmp/fm-teardown-endpoint-safety.2K38CX/gnhf-child-slot-reassigned/home), which claimed that pool slot after this record was written; that slot is no longer child's, so its processes, copy, and claim are left untouched and only child's own cleanup runs.
+warning: task child's recorded worktree /Users/zachuri/.no-mistakes/worktrees/1cf57c113ec8/01M838YCJCAH84RWJBYBK0QCV2/.nm-test-tmp/fm-teardown-endpoint-safety.2K38CX/gnhf-child-slot-reassigned/worktree was reassigned to task current-owner (home /Users/zachuri/.no-mistakes/worktrees/1cf57c113ec8/01M838YCJCAH84RWJBYBK0QCV2/.nm-test-tmp/fm-teardown-endpoint-safety.2K38CX/gnhf-child-slot-reassigned/home), which claimed that pool slot after this record was written; that slot is no longer child's, so its processes, copy, and claim are left untouched and only child's own cleanup runs.
+warning: task child's recorded worktree /Users/zachuri/.no-mistakes/worktrees/1cf57c113ec8/01M838YCJCAH84RWJBYBK0QCV2/.nm-test-tmp/fm-teardown-endpoint-safety.2K38CX/gnhf-child-slot-reassigned/worktree was reassigned to task current-owner (home /Users/zachuri/.no-mistakes/worktrees/1cf57c113ec8/01M838YCJCAH84RWJBYBK0QCV2/.nm-test-tmp/fm-teardown-endpoint-safety.2K38CX/gnhf-child-slot-reassigned/home), which claimed that pool slot after this record was written; that slot is no longer child's, so its processes, copy, and claim are left untouched and only child's own cleanup runs.
+runtime.log:
+tmux <kill-window> <-t> <=isolated:=fm-child>
+tmux <kill-window> <-t> <=isolated:=fm-history-scout>
+tmux <list-windows> <-t> <=isolated> <-F> <#{window_name}>
+tmux <list-windows> <-t> <=isolated> <-F> <#{window_name}>
+tmux <list-windows> <-t> <isolated> <-F> <#{window_name}>
+before/after home/state/history-scout.meta: removed
+before/after pool/treehouse-state.json: identical bytes
+before/after pool/1/.fm-slot-owner: identical bytes
+before/after secondmate-home/state/child.meta: removed
+before/after secondmate-home/state/child.status: removed
+before/after pool/1/repo/README.md: identical bytes
+before/after home/state/current-owner.meta: identical bytes
+history pool/1/repo/.gnhf: {'exists': True, 'mode': 'drwxr-xr-x'}
+history secondmate-home/.gnhf: {'exists': False}
+history pool/1/repo/.gnhf/runs: {'exists': True, 'mode': 'drwxr-xr-x'}
+history pool/1/repo/.gnhf/runs/synthetic: {'exists': True, 'mode': 'drwxr-xr-x'}
+history pool/1/repo/.gnhf/runs/synthetic/marker: {'exists': True, 'mode': '-rw-r--r--', 'sha256': '6a17d1c7f5aa32f0edde8ce2acc692bdf7354dc4ffcc4452903c0cbe9ba66077', 'bytes': 25, 'text': 'public synthetic history\n'}
+
+=== gnhf-child-slot-unclaimed ===
+$ bash bin/fm-teardown.sh history-scout --force
+CLI exit: 1
+stdout:
+(empty)
+stderr:
+REFUSED: protected GNHF history (.gnhf) exists under /Users/zachuri/.no-mistakes/worktrees/1cf57c113ec8/01M838YCJCAH84RWJBYBK0QCV2/.nm-test-tmp/fm-teardown-endpoint-safety.2K38CX/gnhf-child-slot-unclaimed/pool/1/repo; preserve it outside the cleanup target before retrying. --force does not bypass this check.
+runtime.log:
+(empty)
+before/after home/state/history-scout.meta: identical bytes
+before/after pool/treehouse-state.json: identical bytes
+before/after pool/1/.fm-slot-owner: removed
+before/after secondmate-home/state/child.meta: identical bytes
+before/after secondmate-home/state/child.status: identical bytes
+before/after pool/1/repo/README.md: identical bytes
+history pool/1/repo/.gnhf: {'exists': True, 'mode': 'drwxr-xr-x'}
+history secondmate-home/.gnhf: {'exists': False}
+history pool/1/repo/.gnhf/runs: {'exists': True, 'mode': 'drwxr-xr-x'}
+history pool/1/repo/.gnhf/runs/synthetic: {'exists': True, 'mode': 'drwxr-xr-x'}
+history pool/1/repo/.gnhf/runs/synthetic/marker: {'exists': True, 'mode': '-rw-r--r--', 'sha256': '6a17d1c7f5aa32f0edde8ce2acc692bdf7354dc4ffcc4452903c0cbe9ba66077', 'bytes': 25, 'text': 'public synthetic history\n'}
+
+=== gnhf-dangling ===
+$ bash bin/fm-teardown.sh history-scout 
+CLI exit: 1
+stdout:
+(empty)
+stderr:
+REFUSED: protected GNHF history (.gnhf) exists under /Users/zachuri/.no-mistakes/worktrees/1cf57c113ec8/01M838YCJCAH84RWJBYBK0QCV2/.nm-test-tmp/fm-teardown-endpoint-safety.2K38CX/gnhf-dangling/worktree; preserve it outside the cleanup target before retrying. --force does not bypass this check.
+runtime.log:
+(empty)
+before/after home/state/history-scout.meta: identical bytes
+before/after pool/treehouse-state.json: identical bytes
+before/after pool/1/.fm-slot-owner: identical bytes
+before/after pool/1/repo/README.md: identical bytes
+history pool/1/repo/.gnhf: {'exists': True, 'mode': 'lrwxr-xr-x', 'symlink': '/Users/zachuri/.no-mistakes/worktrees/1cf57c113ec8/01M838YCJCAH84RWJBYBK0QCV2/.nm-test-tmp/fm-teardown-endpoint-safety.2K38CX/gnhf-dangling/missing-history', 'target_exists': False}
+history secondmate-home/.gnhf: {'exists': False}
+
+=== gnhf-empty ===
+$ bash bin/fm-teardown.sh history-scout 
+CLI exit: 1
+stdout:
+(empty)
+stderr:
+REFUSED: protected GNHF history (.gnhf) exists under /Users/zachuri/.no-mistakes/worktrees/1cf57c113ec8/01M838YCJCAH84RWJBYBK0QCV2/.nm-test-tmp/fm-teardown-endpoint-safety.2K38CX/gnhf-empty/worktree; preserve it outside the cleanup target before retrying. --force does not bypass this check.
+runtime.log:
+(empty)
+before/after home/state/history-scout.meta: identical bytes
+before/after pool/treehouse-state.json: identical bytes
+before/after pool/1/.fm-slot-owner: identical bytes
+before/after pool/1/repo/README.md: identical bytes
+history pool/1/repo/.gnhf: {'exists': True, 'mode': 'drwxr-xr-x'}
+history secondmate-home/.gnhf: {'exists': False}
+
+=== gnhf-fifo ===
+$ bash bin/fm-teardown.sh history-scout 
+CLI exit: 1
+stdout:
+(empty)
+stderr:
+REFUSED: protected GNHF history (.gnhf) exists under /Users/zachuri/.no-mistakes/worktrees/1cf57c113ec8/01M838YCJCAH84RWJBYBK0QCV2/.nm-test-tmp/fm-teardown-endpoint-safety.2K38CX/gnhf-fifo/worktree; preserve it outside the cleanup target before retrying. --force does not bypass this check.
+runtime.log:
+(empty)
+before/after home/state/history-scout.meta: identical bytes
+before/after pool/treehouse-state.json: identical bytes
+before/after pool/1/.fm-slot-owner: identical bytes
+before/after pool/1/repo/README.md: identical bytes
+history pool/1/repo/.gnhf: {'exists': True, 'mode': 'prw-r--r--'}
+history secondmate-home/.gnhf: {'exists': False}
+
+=== gnhf-file ===
+$ bash bin/fm-teardown.sh history-scout 
+CLI exit: 1
+stdout:
+(empty)
+stderr:
+REFUSED: protected GNHF history (.gnhf) exists under /Users/zachuri/.no-mistakes/worktrees/1cf57c113ec8/01M838YCJCAH84RWJBYBK0QCV2/.nm-test-tmp/fm-teardown-endpoint-safety.2K38CX/gnhf-file/worktree; preserve it outside the cleanup target before retrying. --force does not bypass this check.
+runtime.log:
+(empty)
+before/after home/state/history-scout.meta: identical bytes
+before/after pool/treehouse-state.json: identical bytes
+before/after pool/1/.fm-slot-owner: identical bytes
+before/after pool/1/repo/README.md: identical bytes
+history pool/1/repo/.gnhf: {'exists': True, 'mode': '-rw-r--r--', 'sha256': '6a17d1c7f5aa32f0edde8ce2acc692bdf7354dc4ffcc4452903c0cbe9ba66077', 'bytes': 25, 'text': 'public synthetic history\n'}
+history secondmate-home/.gnhf: {'exists': False}
+
+=== gnhf-forced ===
+$ bash bin/fm-teardown.sh history-scout --force
+CLI exit: 1
+stdout:
+(empty)
+stderr:
+REFUSED: protected GNHF history (.gnhf) exists under /Users/zachuri/.no-mistakes/worktrees/1cf57c113ec8/01M838YCJCAH84RWJBYBK0QCV2/.nm-test-tmp/fm-teardown-endpoint-safety.2K38CX/gnhf-forced/worktree; preserve it outside the cleanup target before retrying. --force does not bypass this check.
+runtime.log:
+(empty)
+before/after home/state/history-scout.meta: identical bytes
+before/after pool/treehouse-state.json: identical bytes
+before/after pool/1/.fm-slot-owner: identical bytes
+before/after pool/1/repo/README.md: identical bytes
+history pool/1/repo/.gnhf: {'exists': True, 'mode': 'drwxr-xr-x'}
+history secondmate-home/.gnhf: {'exists': False}
+history pool/1/repo/.gnhf/runs: {'exists': True, 'mode': 'drwxr-xr-x'}
+history pool/1/repo/.gnhf/runs/synthetic: {'exists': True, 'mode': 'drwxr-xr-x'}
+history pool/1/repo/.gnhf/runs/synthetic/marker: {'exists': True, 'mode': '-rw-r--r--', 'sha256': '6a17d1c7f5aa32f0edde8ce2acc692bdf7354dc4ffcc4452903c0cbe9ba66077', 'bytes': 25, 'text': 'public synthetic history\n'}
+
+=== gnhf-ignored ===
+$ bash bin/fm-teardown.sh history-scout 
+CLI exit: 1
+stdout:
+(empty)
+stderr:
+REFUSED: protected GNHF history (.gnhf) exists under /Users/zachuri/.no-mistakes/worktrees/1cf57c113ec8/01M838YCJCAH84RWJBYBK0QCV2/.nm-test-tmp/fm-teardown-endpoint-safety.2K38CX/gnhf-ignored/worktree; preserve it outside the cleanup target before retrying. --force does not bypass this check.
+runtime.log:
+(empty)
+before/after home/state/history-scout.meta: identical bytes
+before/after pool/treehouse-state.json: identical bytes
+before/after pool/1/.fm-slot-owner: identical bytes
+before/after pool/1/repo/README.md: identical bytes
+history pool/1/repo/.gnhf: {'exists': True, 'mode': 'drwxr-xr-x'}
+history secondmate-home/.gnhf: {'exists': False}
+history pool/1/repo/.gnhf/runs: {'exists': True, 'mode': 'drwxr-xr-x'}
+history pool/1/repo/.gnhf/runs/synthetic: {'exists': True, 'mode': 'drwxr-xr-x'}
+history pool/1/repo/.gnhf/runs/synthetic/marker: {'exists': True, 'mode': '-rw-r--r--', 'sha256': '6a17d1c7f5aa32f0edde8ce2acc692bdf7354dc4ffcc4452903c0cbe9ba66077', 'bytes': 25, 'text': 'public synthetic history\n'}
+
+=== gnhf-nested ===
+$ bash bin/fm-teardown.sh history-scout 
+CLI exit: 1
+stdout:
+(empty)
+stderr:
+REFUSED: protected GNHF history (.gnhf) exists under /Users/zachuri/.no-mistakes/worktrees/1cf57c113ec8/01M838YCJCAH84RWJBYBK0QCV2/.nm-test-tmp/fm-teardown-endpoint-safety.2K38CX/gnhf-nested/worktree; preserve it outside the cleanup target before retrying. --force does not bypass this check.
+runtime.log:
+(empty)
+before/after home/state/history-scout.meta: identical bytes
+before/after pool/treehouse-state.json: identical bytes
+before/after pool/1/.fm-slot-owner: identical bytes
+before/after pool/1/repo/README.md: identical bytes
+history pool/1/repo/.gnhf: {'exists': False}
+history secondmate-home/.gnhf: {'exists': False}
+history pool/1/repo/scratch-clone/.gnhf: {'exists': True, 'mode': 'drwxr-xr-x'}
+history pool/1/repo/scratch-clone/.gnhf/runs: {'exists': True, 'mode': 'drwxr-xr-x'}
+history pool/1/repo/scratch-clone/.gnhf/runs/synthetic: {'exists': True, 'mode': 'drwxr-xr-x'}
+history pool/1/repo/scratch-clone/.gnhf/runs/synthetic/marker: {'exists': True, 'mode': '-rw-r--r--', 'sha256': '6a17d1c7f5aa32f0edde8ce2acc692bdf7354dc4ffcc4452903c0cbe9ba66077', 'bytes': 25, 'text': 'public synthetic history\n'}
+
+=== gnhf-run ===
+$ bash bin/fm-teardown.sh history-scout 
+CLI exit: 1
+stdout:
+(empty)
+stderr:
+REFUSED: protected GNHF history (.gnhf) exists under /Users/zachuri/.no-mistakes/worktrees/1cf57c113ec8/01M838YCJCAH84RWJBYBK0QCV2/.nm-test-tmp/fm-teardown-endpoint-safety.2K38CX/gnhf-run/worktree; preserve it outside the cleanup target before retrying. --force does not bypass this check.
+runtime.log:
+(empty)
+before/after home/state/history-scout.meta: identical bytes
+before/after pool/treehouse-state.json: identical bytes
+before/after pool/1/.fm-slot-owner: identical bytes
+before/after pool/1/repo/README.md: identical bytes
+history pool/1/repo/.gnhf: {'exists': True, 'mode': 'drwxr-xr-x'}
+history secondmate-home/.gnhf: {'exists': False}
+history pool/1/repo/.gnhf/runs: {'exists': True, 'mode': 'drwxr-xr-x'}
+history pool/1/repo/.gnhf/runs/synthetic: {'exists': True, 'mode': 'drwxr-xr-x'}
+history pool/1/repo/.gnhf/runs/synthetic/marker: {'exists': True, 'mode': '-rw-r--r--', 'sha256': '6a17d1c7f5aa32f0edde8ce2acc692bdf7354dc4ffcc4452903c0cbe9ba66077', 'bytes': 25, 'text': 'public synthetic history\n'}
+
+=== gnhf-scan-error ===
+$ bash bin/fm-teardown.sh history-scout 
+CLI exit: 1
+stdout:
+(empty)
+stderr:
+synthetic directory scan failure
+REFUSED: cannot inspect /Users/zachuri/.no-mistakes/worktrees/1cf57c113ec8/01M838YCJCAH84RWJBYBK0QCV2/.nm-test-tmp/fm-teardown-endpoint-safety.2K38CX/gnhf-scan-error/worktree for protected GNHF history; preserving the cleanup target and task records.
+runtime.log:
+(empty)
+before/after home/state/history-scout.meta: identical bytes
+before/after pool/treehouse-state.json: identical bytes
+before/after pool/1/.fm-slot-owner: identical bytes
+before/after pool/1/repo/README.md: identical bytes
+history pool/1/repo/.gnhf: {'exists': True, 'mode': 'drwxr-xr-x'}
+history secondmate-home/.gnhf: {'exists': False}
+history pool/1/repo/.gnhf/runs: {'exists': True, 'mode': 'drwxr-xr-x'}
+history pool/1/repo/.gnhf/runs/synthetic: {'exists': True, 'mode': 'drwxr-xr-x'}
+history pool/1/repo/.gnhf/runs/synthetic/marker: {'exists': True, 'mode': '-rw-r--r--', 'sha256': '6a17d1c7f5aa32f0edde8ce2acc692bdf7354dc4ffcc4452903c0cbe9ba66077', 'bytes': 25, 'text': 'public synthetic history\n'}
+
+=== gnhf-secondmate-child ===
+$ bash bin/fm-teardown.sh history-scout --force
+CLI exit: 1
+stdout:
+(empty)
+stderr:
+REFUSED: protected GNHF history (.gnhf) exists under /Users/zachuri/.no-mistakes/worktrees/1cf57c113ec8/01M838YCJCAH84RWJBYBK0QCV2/.nm-test-tmp/fm-teardown-endpoint-safety.2K38CX/gnhf-secondmate-child/pool/1/repo; preserve it outside the cleanup target before retrying. --force does not bypass this check.
+runtime.log:
+(empty)
+before/after home/state/history-scout.meta: identical bytes
+before/after pool/treehouse-state.json: identical bytes
+before/after pool/1/.fm-slot-owner: identical bytes
+before/after secondmate-home/state/child.meta: identical bytes
+before/after pool/1/repo/README.md: identical bytes
+history pool/1/repo/.gnhf: {'exists': True, 'mode': 'drwxr-xr-x'}
+history secondmate-home/.gnhf: {'exists': False}
+history pool/1/repo/.gnhf/runs: {'exists': True, 'mode': 'drwxr-xr-x'}
+history pool/1/repo/.gnhf/runs/synthetic: {'exists': True, 'mode': 'drwxr-xr-x'}
+history pool/1/repo/.gnhf/runs/synthetic/marker: {'exists': True, 'mode': '-rw-r--r--', 'sha256': '6a17d1c7f5aa32f0edde8ce2acc692bdf7354dc4ffcc4452903c0cbe9ba66077', 'bytes': 25, 'text': 'public synthetic history\n'}
+
+=== gnhf-secondmate-home ===
+$ bash bin/fm-teardown.sh history-scout --force
+CLI exit: 1
+stdout:
+(empty)
+stderr:
+REFUSED: protected GNHF history (.gnhf) exists under /Users/zachuri/.no-mistakes/worktrees/1cf57c113ec8/01M838YCJCAH84RWJBYBK0QCV2/.nm-test-tmp/fm-teardown-endpoint-safety.2K38CX/gnhf-secondmate-home/secondmate-home; preserve it outside the cleanup target before retrying. --force does not bypass this check.
+runtime.log:
+(empty)
+before/after home/state/history-scout.meta: identical bytes
+before/after pool/treehouse-state.json: identical bytes
+before/after pool/1/.fm-slot-owner: identical bytes
+before/after pool/1/repo/README.md: identical bytes
+history pool/1/repo/.gnhf: {'exists': False}
+history secondmate-home/.gnhf: {'exists': True, 'mode': 'drwxr-xr-x'}
+history secondmate-home/.gnhf/runs: {'exists': True, 'mode': 'drwxr-xr-x'}
+history secondmate-home/.gnhf/runs/synthetic: {'exists': True, 'mode': 'drwxr-xr-x'}
+history secondmate-home/.gnhf/runs/synthetic/marker: {'exists': True, 'mode': '-rw-r--r--', 'sha256': '6a17d1c7f5aa32f0edde8ce2acc692bdf7354dc4ffcc4452903c0cbe9ba66077', 'bytes': 25, 'text': 'public synthetic history\n'}
+
+=== gnhf-shutdown-orca-close-no ===
+$ bash bin/fm-teardown.sh history-scout --force
+CLI exit: 0
+stdout:
+teardown history-scout complete (window synthetic-terminal, worktree /Users/zachuri/.no-mistakes/worktrees/1cf57c113ec8/01M838YCJCAH84RWJBYBK0QCV2/.nm-test-tmp/fm-teardown-endpoint-safety.2K38CX/gnhf-shutdown-orca-close-no/pool/1/repo)
+Backlog: history-scout just finished (config/backlog-backend selects manual editing). Update /Users/zachuri/.no-mistakes/worktrees/1cf57c113ec8/01M838YCJCAH84RWJBYBK0QCV2/.nm-test-tmp/fm-teardown-endpoint-safety.2K38CX/gnhf-shutdown-orca-close-no/home/data/backlog.md - move history-scout to Done, keep Done to the 10 most recent, then re-scan Queued and dispatch only work whose blockers are gone and date is due.
+stderr:
+(empty)
+runtime.log:
+synthetic shutdown scan
+orca worktree show --worktree id:synthetic-worktree::/Users/zachuri/.no-mistakes/worktrees/1cf57c113ec8/01M838YCJCAH84RWJBYBK0QCV2/.nm-test-tmp/fm-teardown-endpoint-safety.2K38CX/gnhf-shutdown-orca-close-no/pool/1/repo --json
+orca terminal close --terminal synthetic-terminal --json
+orca worktree rm --worktree id:synthetic-worktree::/Users/zachuri/.no-mistakes/worktrees/1cf57c113ec8/01M838YCJCAH84RWJBYBK0QCV2/.nm-test-tmp/fm-teardown-endpoint-safety.2K38CX/gnhf-shutdown-orca-close-no/pool/1/repo --force --json
+before/after home/state/history-scout.meta: removed
+before/after pool/treehouse-state.json: identical bytes
+before/after pool/1/.fm-slot-owner: identical bytes
+before/after pool/1/repo/README.md: removed
+history pool/1/repo/.gnhf: {'exists': False}
+history secondmate-home/.gnhf: {'exists': False}
+
+=== gnhf-shutdown-orca-close-yes ===
+$ bash bin/fm-teardown.sh history-scout --force
+CLI exit: 1
+stdout:
+(empty)
+stderr:
+REFUSED: protected GNHF history (.gnhf) exists under /Users/zachuri/.no-mistakes/worktrees/1cf57c113ec8/01M838YCJCAH84RWJBYBK0QCV2/.nm-test-tmp/fm-teardown-endpoint-safety.2K38CX/gnhf-shutdown-orca-close-yes/pool/1/repo; preserve it outside the cleanup target before retrying. --force does not bypass this check.
+runtime.log:
+synthetic shutdown scan
+orca worktree show --worktree id:synthetic-worktree::/Users/zachuri/.no-mistakes/worktrees/1cf57c113ec8/01M838YCJCAH84RWJBYBK0QCV2/.nm-test-tmp/fm-teardown-endpoint-safety.2K38CX/gnhf-shutdown-orca-close-yes/pool/1/repo --json
+orca terminal close --terminal synthetic-terminal --json
+before/after home/state/history-scout.meta: identical bytes
+before/after pool/treehouse-state.json: identical bytes
+before/after pool/1/.fm-slot-owner: identical bytes
+before/after pool/1/repo/README.md: identical bytes
+history pool/1/repo/.gnhf: {'exists': True, 'mode': 'drwxr-xr-x'}
+history secondmate-home/.gnhf: {'exists': False}
+history pool/1/repo/.gnhf/runs: {'exists': True, 'mode': 'drwxr-xr-x'}
+history pool/1/repo/.gnhf/runs/synthetic: {'exists': True, 'mode': 'drwxr-xr-x'}
+history pool/1/repo/.gnhf/runs/synthetic/marker: {'exists': True, 'mode': '-rw-r--r--', 'sha256': '0fc4d91d6efe1a9c7f77e4a88d886f373fb04c23484578d684561e4df6a10004', 'bytes': 34, 'text': 'public synthetic shutdown history\n'}
+
+=== gnhf-shutdown-orca-reap-no ===
+$ bash bin/fm-teardown.sh history-scout --force
+CLI exit: 0
+stdout:
+teardown history-scout complete (window synthetic-terminal, worktree /Users/zachuri/.no-mistakes/worktrees/1cf57c113ec8/01M838YCJCAH84RWJBYBK0QCV2/.nm-test-tmp/fm-teardown-endpoint-safety.2K38CX/gnhf-shutdown-orca-reap-no/pool/1/repo)
+Backlog: history-scout just finished (config/backlog-backend selects manual editing). Update /Users/zachuri/.no-mistakes/worktrees/1cf57c113ec8/01M838YCJCAH84RWJBYBK0QCV2/.nm-test-tmp/fm-teardown-endpoint-safety.2K38CX/gnhf-shutdown-orca-reap-no/home/data/backlog.md - move history-scout to Done, keep Done to the 10 most recent, then re-scan Queued and dispatch only work whose blockers are gone and date is due.
+stderr:
+(empty)
+runtime.log:
+synthetic shutdown scan
+orca worktree show --worktree id:synthetic-worktree::/Users/zachuri/.no-mistakes/worktrees/1cf57c113ec8/01M838YCJCAH84RWJBYBK0QCV2/.nm-test-tmp/fm-teardown-endpoint-safety.2K38CX/gnhf-shutdown-orca-reap-no/pool/1/repo --json
+orca terminal close --terminal synthetic-terminal --json
+orca worktree rm --worktree id:synthetic-worktree::/Users/zachuri/.no-mistakes/worktrees/1cf57c113ec8/01M838YCJCAH84RWJBYBK0QCV2/.nm-test-tmp/fm-teardown-endpoint-safety.2K38CX/gnhf-shutdown-orca-reap-no/pool/1/repo --force --json
+before/after home/state/history-scout.meta: removed
+before/after pool/treehouse-state.json: identical bytes
+before/after pool/1/.fm-slot-owner: identical bytes
+before/after pool/1/repo/README.md: removed
+history pool/1/repo/.gnhf: {'exists': False}
+history secondmate-home/.gnhf: {'exists': False}
+
+=== gnhf-shutdown-orca-reap-yes ===
+$ bash bin/fm-teardown.sh history-scout --force
+CLI exit: 1
+stdout:
+(empty)
+stderr:
+REFUSED: protected GNHF history (.gnhf) exists under /Users/zachuri/.no-mistakes/worktrees/1cf57c113ec8/01M838YCJCAH84RWJBYBK0QCV2/.nm-test-tmp/fm-teardown-endpoint-safety.2K38CX/gnhf-shutdown-orca-reap-yes/pool/1/repo; preserve it outside the cleanup target before retrying. --force does not bypass this check.
+runtime.log:
+synthetic shutdown scan
+orca worktree show --worktree id:synthetic-worktree::/Users/zachuri/.no-mistakes/worktrees/1cf57c113ec8/01M838YCJCAH84RWJBYBK0QCV2/.nm-test-tmp/fm-teardown-endpoint-safety.2K38CX/gnhf-shutdown-orca-reap-yes/pool/1/repo --json
+orca terminal close --terminal synthetic-terminal --json
+before/after home/state/history-scout.meta: identical bytes
+before/after pool/treehouse-state.json: identical bytes
+before/after pool/1/.fm-slot-owner: identical bytes
+before/after pool/1/repo/README.md: identical bytes
+history pool/1/repo/.gnhf: {'exists': True, 'mode': 'drwxr-xr-x'}
+history secondmate-home/.gnhf: {'exists': False}
+history pool/1/repo/.gnhf/runs: {'exists': True, 'mode': 'drwxr-xr-x'}
+history pool/1/repo/.gnhf/runs/synthetic: {'exists': True, 'mode': 'drwxr-xr-x'}
+history pool/1/repo/.gnhf/runs/synthetic/marker: {'exists': True, 'mode': '-rw-r--r--', 'sha256': '0fc4d91d6efe1a9c7f77e4a88d886f373fb04c23484578d684561e4df6a10004', 'bytes': 34, 'text': 'public synthetic shutdown history\n'}
+
+=== gnhf-shutdown-t3-home-no ===
+$ bash bin/fm-teardown.sh history-scout --force
+CLI exit: 0
+stdout:
+teardown history-scout complete (window synthetic-thread, worktree /Users/zachuri/.no-mistakes/worktrees/1cf57c113ec8/01M838YCJCAH84RWJBYBK0QCV2/.nm-test-tmp/fm-teardown-endpoint-safety.2K38CX/gnhf-shutdown-t3-home-no/secondmate-home)
+stderr:
+(empty)
+runtime.log:
+t3 status
+t3 state
+t3 archive
+synthetic shutdown scan
+before/after home/state/history-scout.meta: removed
+before/after pool/treehouse-state.json: identical bytes
+before/after pool/1/.fm-slot-owner: identical bytes
+before/after pool/1/repo/README.md: identical bytes
+history pool/1/repo/.gnhf: {'exists': False}
+history secondmate-home/.gnhf: {'exists': False}
+
+=== gnhf-shutdown-t3-home-yes ===
+$ bash bin/fm-teardown.sh history-scout --force
+CLI exit: 1
+stdout:
+(empty)
+stderr:
+REFUSED: protected GNHF history (.gnhf) exists under /Users/zachuri/.no-mistakes/worktrees/1cf57c113ec8/01M838YCJCAH84RWJBYBK0QCV2/.nm-test-tmp/fm-teardown-endpoint-safety.2K38CX/gnhf-shutdown-t3-home-yes/secondmate-home; preserve it outside the cleanup target before retrying. --force does not bypass this check.
+runtime.log:
+t3 status
+t3 state
+t3 archive
+synthetic shutdown scan
+before/after home/state/history-scout.meta: identical bytes
+before/after pool/treehouse-state.json: identical bytes
+before/after pool/1/.fm-slot-owner: identical bytes
+before/after pool/1/repo/README.md: identical bytes
+history pool/1/repo/.gnhf: {'exists': False}
+history secondmate-home/.gnhf: {'exists': True, 'mode': 'drwxr-xr-x'}
+history secondmate-home/.gnhf/runs: {'exists': True, 'mode': 'drwxr-xr-x'}
+history secondmate-home/.gnhf/runs/synthetic: {'exists': True, 'mode': 'drwxr-xr-x'}
+history secondmate-home/.gnhf/runs/synthetic/marker: {'exists': True, 'mode': '-rw-r--r--', 'sha256': '0fc4d91d6efe1a9c7f77e4a88d886f373fb04c23484578d684561e4df6a10004', 'bytes': 34, 'text': 'public synthetic shutdown history\n'}
+
+=== gnhf-shutdown-tmux-home-no ===
+$ bash bin/fm-teardown.sh history-scout --force
+CLI exit: 0
+stdout:
+teardown history-scout complete (window isolated:fm-history-scout, worktree /Users/zachuri/.no-mistakes/worktrees/1cf57c113ec8/01M838YCJCAH84RWJBYBK0QCV2/.nm-test-tmp/fm-teardown-endpoint-safety.2K38CX/gnhf-shutdown-tmux-home-no/secondmate-home)
+stderr:
+(empty)
+runtime.log:
+tmux <kill-window> <-t> <=isolated:=fm-history-scout>
+synthetic shutdown scan
+before/after home/state/history-scout.meta: removed
+before/after pool/treehouse-state.json: identical bytes
+before/after pool/1/.fm-slot-owner: identical bytes
+before/after pool/1/repo/README.md: identical bytes
+history pool/1/repo/.gnhf: {'exists': False}
+history secondmate-home/.gnhf: {'exists': False}
+
+=== gnhf-shutdown-tmux-home-yes ===
+$ bash bin/fm-teardown.sh history-scout --force
+CLI exit: 1
+stdout:
+(empty)
+stderr:
+REFUSED: protected GNHF history (.gnhf) exists under /Users/zachuri/.no-mistakes/worktrees/1cf57c113ec8/01M838YCJCAH84RWJBYBK0QCV2/.nm-test-tmp/fm-teardown-endpoint-safety.2K38CX/gnhf-shutdown-tmux-home-yes/secondmate-home; preserve it outside the cleanup target before retrying. --force does not bypass this check.
+runtime.log:
+tmux <kill-window> <-t> <=isolated:=fm-history-scout>
+synthetic shutdown scan
+before/after home/state/history-scout.meta: identical bytes
+before/after pool/treehouse-state.json: identical bytes
+before/after pool/1/.fm-slot-owner: identical bytes
+before/after pool/1/repo/README.md: identical bytes
+history pool/1/repo/.gnhf: {'exists': False}
+history secondmate-home/.gnhf: {'exists': True, 'mode': 'drwxr-xr-x'}
+history secondmate-home/.gnhf/runs: {'exists': True, 'mode': 'drwxr-xr-x'}
+history secondmate-home/.gnhf/runs/synthetic: {'exists': True, 'mode': 'drwxr-xr-x'}
+history secondmate-home/.gnhf/runs/synthetic/marker: {'exists': True, 'mode': '-rw-r--r--', 'sha256': '0fc4d91d6efe1a9c7f77e4a88d886f373fb04c23484578d684561e4df6a10004', 'bytes': 34, 'text': 'public synthetic shutdown history\n'}
+
+=== gnhf-symlink ===
+$ bash bin/fm-teardown.sh history-scout 
+CLI exit: 1
+stdout:
+(empty)
+stderr:
+REFUSED: protected GNHF history (.gnhf) exists under /Users/zachuri/.no-mistakes/worktrees/1cf57c113ec8/01M838YCJCAH84RWJBYBK0QCV2/.nm-test-tmp/fm-teardown-endpoint-safety.2K38CX/gnhf-symlink/worktree; preserve it outside the cleanup target before retrying. --force does not bypass this check.
+runtime.log:
+(empty)
+before/after home/state/history-scout.meta: identical bytes
+before/after pool/treehouse-state.json: identical bytes
+before/after pool/1/.fm-slot-owner: identical bytes
+before/after pool/1/repo/README.md: identical bytes
+history pool/1/repo/.gnhf: {'exists': True, 'mode': 'lrwxr-xr-x', 'symlink': '/Users/zachuri/.no-mistakes/worktrees/1cf57c113ec8/01M838YCJCAH84RWJBYBK0QCV2/.nm-test-tmp/fm-teardown-endpoint-safety.2K38CX/gnhf-symlink/external-history', 'target_exists': True}
+history secondmate-home/.gnhf: {'exists': False}
+

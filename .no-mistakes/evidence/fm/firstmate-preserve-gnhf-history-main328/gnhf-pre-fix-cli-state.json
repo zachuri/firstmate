@@ -1,0 +1,168 @@
+{
+  "version": "424911ca before latest fix",
+  "scope": "synthetic actual CLI with test-local dependency stubs; expected regression failure",
+  "cases": [
+    {
+      "case": "gnhf-absent",
+      "stdout": "teardown history-scout complete (window isolated:fm-history-scout, worktree /Users/zachuri/.no-mistakes/worktrees/1cf57c113ec8/01M838YCJCAH84RWJBYBK0QCV2/.nm-test-tmp/fm-teardown-endpoint-safety.rmibJ7/gnhf-absent/worktree)\nBacklog: history-scout just finished (config/backlog-backend selects manual editing). Update /Users/zachuri/.no-mistakes/worktrees/1cf57c113ec8/01M838YCJCAH84RWJBYBK0QCV2/.nm-test-tmp/fm-teardown-endpoint-safety.rmibJ7/gnhf-absent/home/data/backlog.md - move history-scout to Done, keep Done to the 10 most recent, then re-scan Queued and dispatch only work whose blockers are gone and date is due.\n",
+      "stderr": "",
+      "runtime.log": "treehouse return --force /Users/zachuri/.no-mistakes/worktrees/1cf57c113ec8/01M838YCJCAH84RWJBYBK0QCV2/.nm-test-tmp/fm-teardown-endpoint-safety.rmibJ7/gnhf-absent/worktree\ntmux <kill-window> <-t> <=isolated:=fm-history-scout>\n",
+      "secondmate-home exists": false,
+      "home/state/history-scout.meta exists": false,
+      "pool/1/repo exists": true
+    },
+    {
+      "case": "gnhf-dangling",
+      "stdout": "",
+      "stderr": "REFUSED: protected GNHF history (.gnhf) exists under /Users/zachuri/.no-mistakes/worktrees/1cf57c113ec8/01M838YCJCAH84RWJBYBK0QCV2/.nm-test-tmp/fm-teardown-endpoint-safety.rmibJ7/gnhf-dangling/worktree; preserve it outside the cleanup target before retrying. --force does not bypass this check.\n",
+      "runtime.log": "",
+      "secondmate-home exists": false,
+      "home/state/history-scout.meta exists": true,
+      "pool/1/repo exists": true
+    },
+    {
+      "case": "gnhf-empty",
+      "stdout": "",
+      "stderr": "REFUSED: protected GNHF history (.gnhf) exists under /Users/zachuri/.no-mistakes/worktrees/1cf57c113ec8/01M838YCJCAH84RWJBYBK0QCV2/.nm-test-tmp/fm-teardown-endpoint-safety.rmibJ7/gnhf-empty/worktree; preserve it outside the cleanup target before retrying. --force does not bypass this check.\n",
+      "runtime.log": "",
+      "secondmate-home exists": false,
+      "home/state/history-scout.meta exists": true,
+      "pool/1/repo exists": true
+    },
+    {
+      "case": "gnhf-fifo",
+      "stdout": "",
+      "stderr": "REFUSED: protected GNHF history (.gnhf) exists under /Users/zachuri/.no-mistakes/worktrees/1cf57c113ec8/01M838YCJCAH84RWJBYBK0QCV2/.nm-test-tmp/fm-teardown-endpoint-safety.rmibJ7/gnhf-fifo/worktree; preserve it outside the cleanup target before retrying. --force does not bypass this check.\n",
+      "runtime.log": "",
+      "secondmate-home exists": false,
+      "home/state/history-scout.meta exists": true,
+      "pool/1/repo exists": true
+    },
+    {
+      "case": "gnhf-file",
+      "stdout": "",
+      "stderr": "REFUSED: protected GNHF history (.gnhf) exists under /Users/zachuri/.no-mistakes/worktrees/1cf57c113ec8/01M838YCJCAH84RWJBYBK0QCV2/.nm-test-tmp/fm-teardown-endpoint-safety.rmibJ7/gnhf-file/worktree; preserve it outside the cleanup target before retrying. --force does not bypass this check.\n",
+      "runtime.log": "",
+      "secondmate-home exists": false,
+      "home/state/history-scout.meta exists": true,
+      "pool/1/repo exists": true
+    },
+    {
+      "case": "gnhf-forced",
+      "stdout": "",
+      "stderr": "REFUSED: protected GNHF history (.gnhf) exists under /Users/zachuri/.no-mistakes/worktrees/1cf57c113ec8/01M838YCJCAH84RWJBYBK0QCV2/.nm-test-tmp/fm-teardown-endpoint-safety.rmibJ7/gnhf-forced/worktree; preserve it outside the cleanup target before retrying. --force does not bypass this check.\n",
+      "runtime.log": "",
+      "secondmate-home exists": false,
+      "home/state/history-scout.meta exists": true,
+      "pool/1/repo exists": true
+    },
+    {
+      "case": "gnhf-ignored",
+      "stdout": "",
+      "stderr": "REFUSED: protected GNHF history (.gnhf) exists under /Users/zachuri/.no-mistakes/worktrees/1cf57c113ec8/01M838YCJCAH84RWJBYBK0QCV2/.nm-test-tmp/fm-teardown-endpoint-safety.rmibJ7/gnhf-ignored/worktree; preserve it outside the cleanup target before retrying. --force does not bypass this check.\n",
+      "runtime.log": "",
+      "secondmate-home exists": false,
+      "home/state/history-scout.meta exists": true,
+      "pool/1/repo exists": true
+    },
+    {
+      "case": "gnhf-nested",
+      "stdout": "",
+      "stderr": "REFUSED: protected GNHF history (.gnhf) exists under /Users/zachuri/.no-mistakes/worktrees/1cf57c113ec8/01M838YCJCAH84RWJBYBK0QCV2/.nm-test-tmp/fm-teardown-endpoint-safety.rmibJ7/gnhf-nested/worktree; preserve it outside the cleanup target before retrying. --force does not bypass this check.\n",
+      "runtime.log": "",
+      "secondmate-home exists": false,
+      "home/state/history-scout.meta exists": true,
+      "pool/1/repo exists": true
+    },
+    {
+      "case": "gnhf-run",
+      "stdout": "",
+      "stderr": "REFUSED: protected GNHF history (.gnhf) exists under /Users/zachuri/.no-mistakes/worktrees/1cf57c113ec8/01M838YCJCAH84RWJBYBK0QCV2/.nm-test-tmp/fm-teardown-endpoint-safety.rmibJ7/gnhf-run/worktree; preserve it outside the cleanup target before retrying. --force does not bypass this check.\n",
+      "runtime.log": "",
+      "secondmate-home exists": false,
+      "home/state/history-scout.meta exists": true,
+      "pool/1/repo exists": true
+    },
+    {
+      "case": "gnhf-scan-error",
+      "stdout": "",
+      "stderr": "synthetic directory scan failure\nREFUSED: cannot inspect /Users/zachuri/.no-mistakes/worktrees/1cf57c113ec8/01M838YCJCAH84RWJBYBK0QCV2/.nm-test-tmp/fm-teardown-endpoint-safety.rmibJ7/gnhf-scan-error/worktree for protected GNHF history; preserving the cleanup target and task records.\n",
+      "runtime.log": "",
+      "secondmate-home exists": false,
+      "home/state/history-scout.meta exists": true,
+      "pool/1/repo exists": true
+    },
+    {
+      "case": "gnhf-shutdown-orca-close-no",
+      "stdout": "teardown history-scout complete (window synthetic-terminal, worktree /Users/zachuri/.no-mistakes/worktrees/1cf57c113ec8/01M838YCJCAH84RWJBYBK0QCV2/.nm-test-tmp/fm-teardown-endpoint-safety.rmibJ7/gnhf-shutdown-orca-close-no/pool/1/repo)\nBacklog: history-scout just finished (config/backlog-backend selects manual editing). Update /Users/zachuri/.no-mistakes/worktrees/1cf57c113ec8/01M838YCJCAH84RWJBYBK0QCV2/.nm-test-tmp/fm-teardown-endpoint-safety.rmibJ7/gnhf-shutdown-orca-close-no/home/data/backlog.md - move history-scout to Done, keep Done to the 10 most recent, then re-scan Queued and dispatch only work whose blockers are gone and date is due.\n",
+      "stderr": "",
+      "runtime.log": "synthetic shutdown scan\norca worktree show --worktree id:synthetic-worktree::/Users/zachuri/.no-mistakes/worktrees/1cf57c113ec8/01M838YCJCAH84RWJBYBK0QCV2/.nm-test-tmp/fm-teardown-endpoint-safety.rmibJ7/gnhf-shutdown-orca-close-no/pool/1/repo --json\norca terminal close --terminal synthetic-terminal --json\norca worktree rm --worktree id:synthetic-worktree::/Users/zachuri/.no-mistakes/worktrees/1cf57c113ec8/01M838YCJCAH84RWJBYBK0QCV2/.nm-test-tmp/fm-teardown-endpoint-safety.rmibJ7/gnhf-shutdown-orca-close-no/pool/1/repo --force --json\n",
+      "secondmate-home exists": false,
+      "home/state/history-scout.meta exists": false,
+      "pool/1/repo exists": false
+    },
+    {
+      "case": "gnhf-shutdown-orca-close-yes",
+      "stdout": "",
+      "stderr": "REFUSED: protected GNHF history (.gnhf) exists under /Users/zachuri/.no-mistakes/worktrees/1cf57c113ec8/01M838YCJCAH84RWJBYBK0QCV2/.nm-test-tmp/fm-teardown-endpoint-safety.rmibJ7/gnhf-shutdown-orca-close-yes/pool/1/repo; preserve it outside the cleanup target before retrying. --force does not bypass this check.\n",
+      "runtime.log": "synthetic shutdown scan\norca worktree show --worktree id:synthetic-worktree::/Users/zachuri/.no-mistakes/worktrees/1cf57c113ec8/01M838YCJCAH84RWJBYBK0QCV2/.nm-test-tmp/fm-teardown-endpoint-safety.rmibJ7/gnhf-shutdown-orca-close-yes/pool/1/repo --json\norca terminal close --terminal synthetic-terminal --json\n",
+      "secondmate-home exists": false,
+      "home/state/history-scout.meta exists": true,
+      "pool/1/repo exists": true
+    },
+    {
+      "case": "gnhf-shutdown-orca-reap-no",
+      "stdout": "teardown history-scout complete (window synthetic-terminal, worktree /Users/zachuri/.no-mistakes/worktrees/1cf57c113ec8/01M838YCJCAH84RWJBYBK0QCV2/.nm-test-tmp/fm-teardown-endpoint-safety.rmibJ7/gnhf-shutdown-orca-reap-no/pool/1/repo)\nBacklog: history-scout just finished (config/backlog-backend selects manual editing). Update /Users/zachuri/.no-mistakes/worktrees/1cf57c113ec8/01M838YCJCAH84RWJBYBK0QCV2/.nm-test-tmp/fm-teardown-endpoint-safety.rmibJ7/gnhf-shutdown-orca-reap-no/home/data/backlog.md - move history-scout to Done, keep Done to the 10 most recent, then re-scan Queued and dispatch only work whose blockers are gone and date is due.\n",
+      "stderr": "",
+      "runtime.log": "synthetic shutdown scan\norca worktree show --worktree id:synthetic-worktree::/Users/zachuri/.no-mistakes/worktrees/1cf57c113ec8/01M838YCJCAH84RWJBYBK0QCV2/.nm-test-tmp/fm-teardown-endpoint-safety.rmibJ7/gnhf-shutdown-orca-reap-no/pool/1/repo --json\norca terminal close --terminal synthetic-terminal --json\norca worktree rm --worktree id:synthetic-worktree::/Users/zachuri/.no-mistakes/worktrees/1cf57c113ec8/01M838YCJCAH84RWJBYBK0QCV2/.nm-test-tmp/fm-teardown-endpoint-safety.rmibJ7/gnhf-shutdown-orca-reap-no/pool/1/repo --force --json\n",
+      "secondmate-home exists": false,
+      "home/state/history-scout.meta exists": false,
+      "pool/1/repo exists": false
+    },
+    {
+      "case": "gnhf-shutdown-orca-reap-yes",
+      "stdout": "",
+      "stderr": "REFUSED: protected GNHF history (.gnhf) exists under /Users/zachuri/.no-mistakes/worktrees/1cf57c113ec8/01M838YCJCAH84RWJBYBK0QCV2/.nm-test-tmp/fm-teardown-endpoint-safety.rmibJ7/gnhf-shutdown-orca-reap-yes/pool/1/repo; preserve it outside the cleanup target before retrying. --force does not bypass this check.\n",
+      "runtime.log": "synthetic shutdown scan\norca worktree show --worktree id:synthetic-worktree::/Users/zachuri/.no-mistakes/worktrees/1cf57c113ec8/01M838YCJCAH84RWJBYBK0QCV2/.nm-test-tmp/fm-teardown-endpoint-safety.rmibJ7/gnhf-shutdown-orca-reap-yes/pool/1/repo --json\norca terminal close --terminal synthetic-terminal --json\n",
+      "secondmate-home exists": false,
+      "home/state/history-scout.meta exists": true,
+      "pool/1/repo exists": true
+    },
+    {
+      "case": "gnhf-shutdown-t3-home-no",
+      "stdout": "teardown history-scout complete (window synthetic-thread, worktree /Users/zachuri/.no-mistakes/worktrees/1cf57c113ec8/01M838YCJCAH84RWJBYBK0QCV2/.nm-test-tmp/fm-teardown-endpoint-safety.rmibJ7/gnhf-shutdown-t3-home-no/secondmate-home)\n",
+      "stderr": "",
+      "runtime.log": "t3 status\nt3 state\nt3 archive\nsynthetic shutdown scan\n",
+      "secondmate-home exists": false,
+      "home/state/history-scout.meta exists": false,
+      "pool/1/repo exists": true
+    },
+    {
+      "case": "gnhf-shutdown-t3-home-yes",
+      "stdout": "",
+      "stderr": "REFUSED: protected GNHF history (.gnhf) exists under /Users/zachuri/.no-mistakes/worktrees/1cf57c113ec8/01M838YCJCAH84RWJBYBK0QCV2/.nm-test-tmp/fm-teardown-endpoint-safety.rmibJ7/gnhf-shutdown-t3-home-yes/secondmate-home; preserve it outside the cleanup target before retrying. --force does not bypass this check.\n",
+      "runtime.log": "t3 status\nt3 state\nt3 archive\nsynthetic shutdown scan\n",
+      "secondmate-home exists": true,
+      "home/state/history-scout.meta exists": true,
+      "pool/1/repo exists": true
+    },
+    {
+      "case": "gnhf-shutdown-tmux-home-yes",
+      "stdout": "teardown history-scout complete (window isolated:fm-history-scout, worktree /Users/zachuri/.no-mistakes/worktrees/1cf57c113ec8/01M838YCJCAH84RWJBYBK0QCV2/.nm-test-tmp/fm-teardown-endpoint-safety.rmibJ7/gnhf-shutdown-tmux-home-yes/secondmate-home)\n",
+      "stderr": "",
+      "runtime.log": "tmux <kill-window> <-t> <=isolated:=fm-history-scout>\n",
+      "secondmate-home exists": false,
+      "home/state/history-scout.meta exists": false,
+      "pool/1/repo exists": true
+    },
+    {
+      "case": "gnhf-symlink",
+      "stdout": "",
+      "stderr": "REFUSED: protected GNHF history (.gnhf) exists under /Users/zachuri/.no-mistakes/worktrees/1cf57c113ec8/01M838YCJCAH84RWJBYBK0QCV2/.nm-test-tmp/fm-teardown-endpoint-safety.rmibJ7/gnhf-symlink/worktree; preserve it outside the cleanup target before retrying. --force does not bypass this check.\n",
+      "runtime.log": "",
+      "secondmate-home exists": false,
+      "home/state/history-scout.meta exists": true,
+      "pool/1/repo exists": true
+    }
+  ]
+}

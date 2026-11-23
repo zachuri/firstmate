@@ -1,0 +1,7 @@
+ok - GNHF history and ambiguous or unreadable histories refuse before source, lease, task or backend changes
+ok - history-free disposable scout still closes and returns clean
+ok - synthetic CLI cleanup preserves shutdown-created history at Orca and nonpooled home removal boundaries
+ok - forced child cleanup quiesces before history checks and preserves records after either fallback refusal
+ok - forced secondmate retirement preserves home and external child GNHF histories before any destructive step
+ok - child removal skips only proven reassigned slots and preserves ownership and exclusivity refusals
+Captured CLI output, backend logs and persisted before/after state for 31 synthetic cases.

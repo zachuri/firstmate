@@ -1,0 +1,3 @@
+ok - GNHF history and ambiguous or unreadable histories refuse before source, lease, task or backend changes
+ok - history-free disposable scout still closes and returns clean
+not ok - tmux-home: shutdown barrier not reached: 
